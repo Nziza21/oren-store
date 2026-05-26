@@ -13,11 +13,14 @@ const Nav = () => {
         </Link>
       </div>
       <ul className="nav-links">
-        <li><Link to="/shop">Shop</Link></li>
-        <li><Link to="/founders">Our Story</Link></li>
-      </ul>
+  <li><Link to="/shop">Shop</Link></li>
+  <li><Link to="/collections">Collections</Link></li>
+  <li><Link to="/our-story">Our Story</Link></li>
+</ul>
       <div className="nav-right">
-        <button className="cart-btn">Cart ({count})</button>
+        <Link to="/cart">
+          <button className="cart-btn">Cart ({count})</button>
+        </Link>
       </div>
     </nav>
   )
