@@ -1,11 +1,14 @@
 import Nav from '../components/Nav'
+import Hero from '../components/Hero'
+import Marquee from '../components/Marquee'
 
 const Home = () => {
   return (
     <div>
       <Nav />
       <main>
-        <h1>ORÉN</h1>
+        <Hero />
+        <Marquee />
       </main>
     </div>
   )
