@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { useCart } from '../context/CartContext'
 
 const filters = ['All', 'T-Shirts', 'Shirts', 'Pants', 'Sets', 'Sandals']
 
@@ -16,8 +16,7 @@ const categoryMap = {
 const ProductGrid = () => {
   const [products, setProducts] = useState([])
   const [active, setActive] = useState('All')
-  const [selectedSizes, setSelectedSizes] = useState({})
-  const { addToCart } = useCart()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const category = categoryMap[active]
@@ -26,16 +25,6 @@ const ProductGrid = () => {
       : `http://localhost:5000/api/products?category=${category}`
     axios.get(url).then(res => setProducts(res.data))
   }, [active])
-
-  const handleSize = (productId, size) => {
-    setSelectedSizes(prev => ({ ...prev, [productId]: size }))
-  }
-
-  const handleAdd = (product) => {
-    const size = selectedSizes[product.id]
-    if (!size) return alert('Please select a size')
-    addToCart(product, size)
-  }
 
   return (
     <section className="products">
@@ -60,23 +49,15 @@ const ProductGrid = () => {
 
       <div className="product-grid">
         {products.map((product, i) => (
-          <div key={product.id} className={`p-card p-card-${i % 9}`}>
+          <div
+            key={product.id}
+            className={`p-card p-card-${i % 9}`}
+            onClick={() => navigate(`/product/${product.id}`)}
+          >
             <div className="p-img">
               <span className="placeholder-text">Photo</span>
             </div>
             {product.badge && <div className="p-badge">{product.badge}</div>}
-            <div className="p-sizes">
-              {product.sizes.map(size => (
-                <button
-                  key={size}
-                  className={`size-btn ${selectedSizes[product.id] === size ? 'active' : ''}`}
-                  onClick={() => handleSize(product.id, size)}
-                >
-                  {size}
-                </button>
-              ))}
-            </div>
-            <button className="p-add" onClick={() => handleAdd(product)}>+</button>
             <div className="p-info">
               <div className="p-name">{product.name}</div>
               <div className="p-price">{product.price.toLocaleString()} RWF</div>

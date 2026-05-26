@@ -1,4 +1,5 @@
 import { useCart } from '../context/CartContext'
+import { Link } from 'react-router-dom'
 import logo from '../assets/oren-logo.png'
 
 const Nav = () => {
@@ -7,12 +8,13 @@ const Nav = () => {
   return (
     <nav className="nav">
       <div className="nav-logo">
-        <img src={logo} alt="ORÉN" className="nav-logo-img" />
+        <Link to="/">
+          <img src={logo} alt="ORÉN" className="nav-logo-img" />
+        </Link>
       </div>
       <ul className="nav-links">
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Collections</a></li>
-        <li><a href="#">Our Story</a></li>
+        <li><Link to="/shop">Shop</Link></li>
+        <li><Link to="/founders">Our Story</Link></li>
       </ul>
       <div className="nav-right">
         <button className="cart-btn">Cart ({count})</button>
