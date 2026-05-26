@@ -1032,3 +1032,79 @@ button {
   color: var(--ink);
   max-width: 600px;
 }
+
+/* FOUNDERS PAGE */
+.founders-page {
+  padding-top: 80px;
+}
+
+.founders-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
+}
+
+.founders-hero-img {
+  background: linear-gradient(135deg, var(--sand), var(--warm));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 80px);
+}
+
+.founders-hero-text {
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.founders-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.founders-role {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.founders-bio {
+  font-size: 0.88rem;
+  line-height: 2;
+  color: var(--bark);
+}
+
+.founders-philosophy {
+  background: var(--earth);
+  padding: 6rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founders-philosophy-inner {
+  text-align: center;
+}
+
+.founders-philosophy-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.2;
+  margin-top: 1rem;
+}
+
+.founders-philosophy-title em {
+  font-style: italic;
+  color: var(--warm);
+}
