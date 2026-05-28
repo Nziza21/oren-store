@@ -6,12 +6,15 @@ import Product from './pages/Product'
 import OurStory from './pages/OurStory'
 import Founders from './pages/Founders'
 import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
+import OrderConfirmation from './pages/OrderConfirmation'
 
 function App() {
   return (
     <CartProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/order/:order_number" element={<OrderConfirmation />} />
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/collections" element={<Shop />} />
@@ -19,6 +22,7 @@ function App() {
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/founders" element={<Founders />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>

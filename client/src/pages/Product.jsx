@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import Toast from '../components/Toast'
 import { useCart } from '../context/CartContext'
 
 const Product = () => {
@@ -12,16 +13,26 @@ const Product = () => {
   const [product, setProduct] = useState(null)
   const [selectedSize, setSelectedSize] = useState(null)
   const [added, setAdded] = useState(false)
+  const [quantity, setQuantity] = useState(1)
+  const [toast, setToast] = useState('')
 
   useEffect(() => {
     axios.get(`http://localhost:5000/api/products/${id}`)
       .then(res => setProduct(res.data))
   }, [id])
 
+  const showToast = (msg) => {
+    setToast(msg)
+    setTimeout(() => setToast(''), 2500)
+  }
+
   const handleAdd = () => {
-    if (!selectedSize) return alert('Please select a size')
-    addToCart(product, selectedSize)
+    if (!selectedSize) return showToast('Please select a size first')
+    for (let i = 0; i < quantity; i++) {
+      addToCart(product, selectedSize)
+    }
     setAdded(true)
+    showToast('Added to cart')
     setTimeout(() => setAdded(false), 2000)
   }
 
@@ -35,6 +46,7 @@ const Product = () => {
   return (
     <div className="page-wrapper">
       <Nav />
+      <Toast message={toast} />
       <div className="product-page">
         <div className="product-img-side">
           <div className="product-main-img">
@@ -66,6 +78,25 @@ const Product = () => {
                   {size}
                 </button>
               ))}
+            </div>
+          </div>
+
+          <div className="quantity-section">
+            <div className="sizes-label">Quantity</div>
+            <div className="quantity-controls">
+              <button
+                className="qty-btn"
+                onClick={() => setQuantity(q => Math.max(1, q - 1))}
+              >
+                −
+              </button>
+              <span className="qty-value">{quantity}</span>
+              <button
+                className="qty-btn"
+                onClick={() => setQuantity(q => q + 1)}
+              >
+                +
+              </button>
             </div>
           </div>
 

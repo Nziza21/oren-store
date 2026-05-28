@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-left">
-        <div className="hero-tag">New Collection 2025</div>
+        <div className="hero-tag">New Collection 2026</div>
         <h1 className="hero-title">
           Wear What<br />You <em>Actually</em><br />Are
         </h1>
@@ -13,8 +13,8 @@ const Hero = () => {
           "You don't need excess to be memorable."
         </p>
         <div className="hero-actions">
-          <button className="btn-primary">Shop Now</button>
-          <button className="btn-ghost">Our Story</button>
+          <a href="/shop" class="btn-primary">Shop Now</a>
+          <a href="http://localhost:5173/our-story" class="btn-ghost">Our Story</a>
         </div>
       </div>
       <div className="hero-right">

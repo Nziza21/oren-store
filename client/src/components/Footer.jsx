@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="footer-grid">
         <div className="footer-brand">
           <span className="footer-logo">ORÉN</span>
-          <p>Made in Kigali. Built to last.<br />Worn by people who know what they want.</p>
+          <p>Made in Kigali. Built to last.<br />Worn by those who know what they want.</p>
         </div>
         <div className="footer-col">
           <h4>Shop</h4>
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <span className="footer-copy">© 2025 ORÉN. Kigali, Rwanda.</span>
+        <span className="footer-copy">© 2026 ORÉN. Kigali, Rwanda.</span>
         <div className="footer-pay">
           <span className="pay-badge">MTN MoMo</span>
           <span className="pay-badge">Visa</span>
