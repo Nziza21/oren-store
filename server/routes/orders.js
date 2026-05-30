@@ -4,21 +4,13 @@ const {
   createOrder,
   getOrderByNumber,
   getAllOrders,
-  updateOrderStatus
-} = require('../controllers/ordersController');
-
-const {
-  createOrder,
-  getOrderByNumber,
-  getAllOrders,
   updateOrderStatus,
   checkPaymentStatus
 } = require('../controllers/ordersController');
 
-router.get('/:order_number/payment-status', checkPaymentStatus);
-
 router.post('/', createOrder);
 router.get('/', getAllOrders);
+router.get('/:order_number/payment-status', checkPaymentStatus);
 router.get('/:order_number', getOrderByNumber);
 router.patch('/:order_number/status', updateOrderStatus);
 

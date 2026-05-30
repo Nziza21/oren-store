@@ -1425,3 +1425,148 @@ button {
   color: #c0392b;
   border: 0.5px solid #c0392b;
 }
+
+/* ADMIN */
+.admin-page {
+  padding: 8rem 3.5rem 5rem;
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  align-items: start;
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-order-card {
+  background: var(--white);
+  padding: 1.25rem;
+  cursor: pointer;
+  border: 0.5px solid transparent;
+  transition: all 0.2s;
+}
+
+.admin-order-card:hover {
+  border-color: var(--sand);
+}
+
+.admin-order-card.active {
+  border-color: var(--ink);
+}
+
+.admin-order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.admin-order-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.admin-order-status {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.admin-order-name {
+  font-size: 0.85rem;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.admin-order-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--bark);
+  margin-bottom: 0.25rem;
+}
+
+.admin-order-date {
+  font-size: 0.68rem;
+  color: var(--warm);
+}
+
+.admin-detail {
+  background: var(--white);
+  padding: 2rem;
+  position: sticky;
+  top: 100px;
+}
+
+.admin-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: var(--bark);
+  font-size: 0.85rem;
+}
+
+.admin-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid var(--sand);
+}
+
+.admin-detail-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--ink);
+}
+
+.admin-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.5px solid var(--sand);
+}
+
+.admin-status-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.admin-status-btn {
+  background: none;
+  border: 0.5px solid var(--sand);
+  padding: 10px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bark);
+  transition: all 0.2s;
+}
+
+.admin-status-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.admin-status-btn.active {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+
+.admin-status-btn:disabled {
+  opacity: 0.5;
+}

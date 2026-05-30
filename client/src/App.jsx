@@ -8,6 +8,7 @@ import Founders from './pages/Founders'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import OrderConfirmation from './pages/OrderConfirmation'
+import Admin from './pages/Admin'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/founders" element={<Founders />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>

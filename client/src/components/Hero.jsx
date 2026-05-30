@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Hero = () => {
   return (
     <section className="hero">
@@ -13,8 +15,8 @@ const Hero = () => {
           "You don't need excess to be memorable."
         </p>
         <div className="hero-actions">
-          <a href="/shop" class="btn-primary">Shop Now</a>
-          <a href="http://localhost:5173/our-story" class="btn-ghost">Our Story</a>
+          <Link to="/shop" className="btn-primary">Shop Now</Link>
+          <Link to="/our-story" className="btn-ghost">Our Story</Link>
         </div>
       </div>
       <div className="hero-right">
