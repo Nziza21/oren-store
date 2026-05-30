@@ -21,6 +21,28 @@ const OrderConfirmation = () => {
       .then(res => setOrder(res.data))
   }, [order_number])
 
+  useEffect(() => {
+    if (!order) return
+    if (order.payment_status === 'paid') return
+
+    const interval = setInterval(async () => {
+      try {
+        const res = await axios.get(`http://localhost:5000/api/orders/${order_number}/payment-status`)
+        if (res.data.payment_status === 'paid') {
+          setOrder(prev => ({ ...prev, payment_status: 'paid', status: 'received' }))
+          clearInterval(interval)
+        } else if (res.data.payment_status === 'failed') {
+          setOrder(prev => ({ ...prev, payment_status: 'failed' }))
+          clearInterval(interval)
+        }
+      } catch (err) {
+        console.error(err)
+      }
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [order])
+
   if (!order) return (
     <div>
       <Nav />
@@ -43,6 +65,11 @@ const OrderConfirmation = () => {
           </p>
           <div className="confirmation-number">
             Order <span>{order.order_number}</span>
+          </div>
+          <div className={`payment-status ${order.payment_status}`}>
+            {order.payment_status === 'paid' ? '✓ Payment Confirmed' :
+             order.payment_status === 'failed' ? '✗ Payment Failed' :
+             '⏳ Waiting for Payment Approval...'}
           </div>
         </div>
 
