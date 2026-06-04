@@ -1570,3 +1570,216 @@ button {
 .admin-status-btn:disabled {
   opacity: 0.5;
 }
+
+/* ADMIN LOGIN */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  padding-top: 80px;
+}
+
+.admin-login-box {
+  background: var(--white);
+  padding: 3rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin-login-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--ink);
+}
+
+/* COLLECTIONS PAGE */
+.collections-page {
+  padding-top: 80px;
+}
+
+.collections-hero {
+  height: 50vh;
+  background: linear-gradient(135deg, var(--earth), var(--bark));
+  display: flex;
+  align-items: flex-end;
+  padding: 3.5rem;
+}
+
+.collections-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  margin-top: 0.5rem;
+}
+
+.collections-sub {
+  font-size: 0.85rem;
+  color: var(--warm);
+  margin-top: 0.75rem;
+}
+
+.collections-section {
+  padding: 5rem 3.5rem;
+  background: var(--cream);
+}
+
+.collections-dark {
+  background: var(--ink);
+}
+
+.collections-dark .section-header {
+  margin-bottom: 2.5rem;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.collections-grid-wide {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.collections-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.collections-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(135deg, var(--sand), var(--warm));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+.collections-img-wide {
+  aspect-ratio: 4 / 3;
+}
+
+.collections-card:hover .collections-img {
+  transform: scale(1.03);
+}
+
+.collections-info {
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--cream);
+}
+
+/* ADMIN TABS */
+.admin-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 0.5px solid var(--sand);
+}
+
+.admin-tab {
+  background: none;
+  border: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bark);
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1.5px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.2s;
+}
+
+.admin-tab.active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* ADMIN PRODUCTS */
+.admin-products {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.admin-product-form {
+  background: var(--white);
+  padding: 2rem;
+  position: sticky;
+  top: 100px;
+}
+
+.admin-product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-product-row {
+  background: var(--white);
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-product-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.admin-product-meta {
+  font-size: 0.72rem;
+  color: var(--bark);
+  text-transform: capitalize;
+}
+
+.admin-product-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.admin-action-btn {
+  background: none;
+  border: 0.5px solid var(--sand);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bark);
+  padding: 6px 12px;
+  transition: all 0.2s;
+}
+
+.admin-action-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.admin-action-btn.delete:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.admin-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}

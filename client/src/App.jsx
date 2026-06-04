@@ -9,6 +9,7 @@ import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import OrderConfirmation from './pages/OrderConfirmation'
 import Admin from './pages/Admin'
+import Collections from './pages/Collections'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="/order/:order_number" element={<OrderConfirmation />} />
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/collections" element={<Shop />} />
+          <Route path="/collections" element={<Collections />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/founders" element={<Founders />} />
