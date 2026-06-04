@@ -25,14 +25,15 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-col">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">TikTok</a></li>
-            <li><a href="#">WhatsApp</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
+  <h4>Info</h4>
+  <ul>
+    <li><a href="/our-story">Our Story</a></li>
+    <li><a href="#">Sizing Guide</a></li>
+    <li><a href="#">Shipping</a></li>
+    <li><a href="#">Returns</a></li>
+    <li><a href="/track">Track Order</a></li>
+  </ul>
+</div>
       </div>
       <div className="footer-bottom">
         <span className="footer-copy">© 2026 ORÉN. Kigali, Rwanda.</span>

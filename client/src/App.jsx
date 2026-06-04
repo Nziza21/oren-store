@@ -10,6 +10,7 @@ import Checkout from './pages/Checkout'
 import OrderConfirmation from './pages/OrderConfirmation'
 import Admin from './pages/Admin'
 import Collections from './pages/Collections'
+import TrackOrder from './pages/TrackOrder'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/track" element={<TrackOrder />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>
