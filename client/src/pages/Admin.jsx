@@ -33,6 +33,7 @@ const Admin = () => {
   const [productForm, setProductForm] = useState(emptyProduct)
   const [editingProduct, setEditingProduct] = useState(null)
   const [toast, setToast] = useState('')
+  const [confirmDelete, setConfirmDelete] = useState(null)
 
   useEffect(() => {
     if (authenticated) {
@@ -128,11 +129,15 @@ const Admin = () => {
     window.scrollTo(0, 0)
   }
 
-  const handleDelete = async (id) => {
-    if (!window.confirm('Delete this product?')) return
+  const handleDelete = (id) => {
+    setConfirmDelete(id)
+  }
+
+  const confirmDeleteProduct = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`)
+      await axios.delete(`http://localhost:5000/api/products/${confirmDelete}`)
       showToast('Product deleted')
+      setConfirmDelete(null)
       await fetchProducts()
     } catch (err) {
       showToast('Something went wrong')
@@ -173,6 +178,18 @@ const Admin = () => {
     <div className="page-wrapper">
       <Nav />
       {toast && <div className="toast">{toast}</div>}
+      {confirmDelete && (
+        <div className="confirm-overlay">
+          <div className="confirm-box">
+            <h3 className="confirm-title">Delete Product</h3>
+            <p className="confirm-body">Are you sure? This can't be undone.</p>
+            <div className="confirm-actions">
+              <button className="btn-primary" onClick={confirmDeleteProduct}>Delete</button>
+              <button className="btn-ghost" onClick={() => setConfirmDelete(null)}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="admin-page">
         <div className="shop-header">
           <div className="section-label">Dashboard</div>

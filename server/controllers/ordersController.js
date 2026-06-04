@@ -30,29 +30,29 @@ const createOrder = async (req, res) => {
 
     const order = result.rows[0];
 
-    // Initiate MoMo payment
-    try {
-      const { requestToPay } = require('../services/momo');
-      const referenceId = await requestToPay({
-        amount: total,
-        phone: customer_phone,
-        orderId: order.id,
-        orderNumber: order_number
-      });
-
-      // Save MTN reference
-      await pool.query(
-        'UPDATE orders SET mtn_reference = $1 WHERE id = $2',
-        [referenceId, order.id]
-      );
-
-      order.mtn_reference = referenceId;
-    } catch (momoErr) {
-      console.error('MoMo payment initiation failed:', momoErr.message);
-      // Order still created, payment failed silently for now
-    }
-
+    // Respond immediately — don't wait for MoMo
     res.json(order);
+
+    // Initiate MoMo payment in background
+    setImmediate(async () => {
+      try {
+        const { requestToPay } = require('../services/momo');
+        const referenceId = await requestToPay({
+          amount: total,
+          phone: customer_phone,
+          orderId: order.id,
+          orderNumber: order_number
+        });
+
+        await pool.query(
+          'UPDATE orders SET mtn_reference = $1 WHERE id = $2',
+          [referenceId, order.id]
+        );
+      } catch (momoErr) {
+        console.error('MoMo payment initiation failed:', momoErr.message);
+      }
+    });
+
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

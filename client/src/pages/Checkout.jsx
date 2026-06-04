@@ -12,6 +12,7 @@ const Checkout = () => {
   const [toast, setToast] = useState('')
   const [loading, setLoading] = useState(false)
   const orderPlaced = useRef(false)
+  const orderNumberRef = useRef(null)
   const [form, setForm] = useState({
     customer_name: '',
     customer_phone: '',
@@ -49,14 +50,18 @@ const Checkout = () => {
         total
       })
 
+      orderNumberRef.current = order.data.order_number
       orderPlaced.current = true
       clearCart()
-      navigate(`/order/${order.data.order_number}`)
+      navigate(`/order/${orderNumberRef.current}`)
     } catch (err) {
       showToast('Something went wrong. Please try again.')
-    } finally {
       setLoading(false)
     }
+  }
+
+  if (cart.length === 0 && !orderPlaced.current) {
+    return null
   }
 
   return (
