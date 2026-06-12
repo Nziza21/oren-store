@@ -1,9 +1,9 @@
 const Marquee = () => {
   const items = [
-    'T-Shirts', 'African Shirts', 'Matching Sets',
-    'Leather Sandals', 'Kigali Made', 'Timeless Design',
-    'T-Shirts', 'African Shirts', 'Matching Sets',
-    'Leather Sandals', 'Kigali Made', 'Timeless Design',
+    'Seasons of the Self', 'Debut Collection', 'The Art of Becoming',
+    'Crafted with Intention', 'ORÉN', 'Always Becoming',
+    'Seasons of the Self', 'Debut Collection', 'The Art of Becoming',
+    'Crafted with Intention', 'ORÉN', 'Always Becoming',
   ]
 
   return (

@@ -1,19 +1,27 @@
+import { useNavigate } from 'react-router-dom'
+
 const Story = () => {
+  const navigate = useNavigate()
+
   return (
     <section className="story">
       <div className="story-img">
-        <span className="placeholder-text" style={{ color: 'var(--warm)' }}>Campaign Video / Photo</span>
+        <span className="placeholder-text" style={{ color: 'var(--warm)' }}>Campaign Photo</span>
       </div>
       <div className="story-content">
-        <div className="story-tag">Our Story</div>
+        <div className="story-tag">The Philosophy</div>
         <h2 className="story-title">
-          The Same Brand.<br /><em>Elevated.</em>
+          We Do Not<br />Arrive <em>Finished.</em>
         </h2>
         <p className="story-body">
-          What started as a quick store became something we actually believed in. We watched people wear what we made and carry it with confidence — and we knew we couldn't keep treating it casually. This is the same brand you knew. Just taken seriously. New name, new identity, same faces, same love — but now built to last.
+          ORÉN is derived from the ancient Hebrew word for pine tree — a symbol of resilience, longevity, and endurance. Like the tree that grows stronger through every harsh winter, we believe human beings are in a constant state of deliberate evolution. We are always becoming. This clothing is built for that journey.
         </p>
-        <button className="btn-ghost" style={{ borderColor: 'var(--warm)', color: 'var(--warm)' }}>
-          Read More
+        <button
+          className="btn-ghost"
+          style={{ borderColor: 'var(--warm)', color: 'var(--warm)' }}
+          onClick={() => navigate('/our-story')}
+        >
+          Our Philosophy
         </button>
       </div>
     </section>

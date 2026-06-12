@@ -4,19 +4,19 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-left">
-        <div className="hero-tag">New Collection 2026</div>
+        <div className="hero-tag">Debut Collection — Seasons of the Self</div>
         <h1 className="hero-title">
-          Wear What<br />You <em>Actually</em><br />Are
+          The Art of<br /><em>Becoming.</em>
         </h1>
         <p className="hero-sub">
-          Elevated basics, tailored African pieces, and handcrafted leather. Built for people who don't need to follow trends.
+          We do not arrive finished. Clothing for the deliberate evolution — built for the man who is always arriving.
         </p>
         <p className="hero-philosophy">
-          "You don't need excess to be memorable."
+          "Like the pine tree that stands steadfast through changing seasons, we are always becoming."
         </p>
         <div className="hero-actions">
-          <Link to="/shop" className="btn-primary">Shop Now</Link>
-          <Link to="/our-story" className="btn-ghost">Our Story</Link>
+          <Link to="/collections" className="btn-primary">The Collection</Link>
+          <Link to="/our-story" className="btn-ghost">Our Philosophy</Link>
         </div>
       </div>
       <div className="hero-right">

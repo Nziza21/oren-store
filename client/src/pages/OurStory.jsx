@@ -13,8 +13,8 @@ const OurStory = () => {
 
         <div className="our-story-hero">
           <div className="our-story-hero-text">
-            <div className="story-tag">Our Story</div>
-            <h1 className="our-story-title">The Same Brand.<br /><em>Elevated.</em></h1>
+            <div className="story-tag">The Philosophy</div>
+            <h1 className="our-story-title">The Art of<br /><em>Becoming.</em></h1>
           </div>
           <div className="our-story-hero-img">
             <span className="placeholder-text">Campaign Photo</span>
@@ -23,22 +23,32 @@ const OurStory = () => {
 
         <div className="our-story-body">
           <div className="our-story-section">
-            <div className="story-tag">Where It Started</div>
-            <p>What started as a quick online store became something we actually believed in. We were selling t-shirts — blanks and printed ones — and people were buying. The audience grew, the orders came in, and somewhere in the middle of all that we realized this wasn't just a side hustle. People were wearing what we made and carrying it with confidence. That meant something.</p>
+            <div className="story-tag">The Name</div>
+            <p>ORÉN is derived from the ancient Hebrew word oren — meaning pine tree. The pine does not rush its growth. It deepens its roots through harsh winters, stands steadfast through changing winds, and builds its strength layer by layer, season by season. Every ring inside that tree is a record of everything it has survived and everything it has become.</p>
           </div>
 
           <div className="our-story-section">
-            <div className="story-tag">The Shift</div>
-            <p>So we stopped. We took the time to ask what this brand actually was. Not what it was selling, but what it stood for. The answer was simple: refinement without excess. Pieces that feel intentional. Clothes that don't chase trends because they don't need to. That's when ORÉN was born — not as a rebrand, but as a commitment to do this properly.</p>
+            <div className="story-tag">The Accent</div>
+            <p>The É is not decoration. The sharp accent mark over the É was designed deliberately — it mirrors the shape of a pine needle, anchoring the name to its origin. And if you look closely, it points upward. A subtle, quiet nod to the only direction that matters: forward. Upward. Becoming.</p>
           </div>
 
           <div className="our-story-section">
-            <div className="story-tag">What ORÉN Is</div>
-            <p>ORÉN is elevated basics, tailored African shirts and matching pants, and handcrafted leather sandals. Everything is chosen with care. Everything carries the logo quietly. Nothing screams. You don't need excess to be memorable — and every piece we make is built around that belief.</p>
+            <div className="story-tag">The Belief</div>
+            <p>We do not arrive finished. To be human is to exist in a state of constant, deliberate evolution. We move through the seasons of our lives — from the student finding footing, to the employee mastering a craft, to the visionary building a legacy. We transition from uncertainty to quiet confidence, from fear to resilience. We are always becoming.</p>
+          </div>
+
+          <div className="our-story-section">
+            <div className="story-tag">The Clothing</div>
+            <p>Fashion is the physical uniform of our evolution. Every time a human being steps into a new phase of life, the very first thing they change is how they dress. ORÉN is designed specifically to be the uniform for those transitions. Not loud. Not trend-chasing. Not trying too hard. Crafted with architectural precision, uncompromising textures, and an understated silhouette — each piece speaks in a whisper. It does not shout for attention. It commands respect through pure substance and impeccable taste.</p>
+          </div>
+
+          <div className="our-story-section">
+            <div className="story-tag">The Collection</div>
+            <p>Seasons of the Self is our debut. Five pieces. Each named for a stage of the journey. Each built to age with you, to wear in beautifully over time — getting better as you get better. This is not fashion. This is an anchor for the journey.</p>
           </div>
 
           <div className="our-story-founder-cta">
-            <p>"You give the name meaning. The name doesn't give meaning to you."</p>
+            <p>"You are an unwritten sentence. An ongoing story. ORÉN: The Art of Becoming."</p>
             <button
               className="btn-ghost"
               onClick={() => navigate('/founders')}

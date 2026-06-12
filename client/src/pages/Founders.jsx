@@ -20,20 +20,20 @@ const Founders = () => {
             <h1 className="founders-title">Nziza Samuel</h1>
             <p className="founders-role">Software Engineer & Creator of ORÉN</p>
             <p className="founders-bio">
-              I'm a software developer currently pursuing a degree in Software Engineering at African Leadership University. I build things in production — real systems, real products, real impact. ORÉN is what happens when that same mindset meets a love for design, identity, and the way clothes make people feel.
+              I am a software engineer currently pursuing a degree at African Leadership University. I build things in production — real systems, real products, real impact. I have always been driven by creative ideas I can actually execute, and studying what I study makes those dreams feel real every single day.
             </p>
             <p className="founders-bio">
-              I didn't set out to start a clothing brand. I set out to build something I actually believed in. My sister and I had a store that worked — people bought, people wore it, people came back. But we were treating it casually, and I knew it deserved more. So I built the website myself, designed the brand identity, chose every piece with intention, and launched ORÉN properly.
+              ORÉN is my own season of becoming. I started selling clothes with my sister because we saw an opportunity and we took it. People bought, people wore it, people came back. But somewhere along the way I realized we were treating something seriously as if it were casual. So I stopped. I studied the philosophy, designed the identity, built the website myself, sourced every detail of every piece personally, and launched ORÉN properly — as a registered business, with a vision, with intention.
             </p>
             <p className="founders-bio">
-              I lead when it's needed, ask questions when clarity is missing, and take ownership because that's the only way anything actually gets done. ORÉN is that philosophy wearing clothes.
+              I lead when it is needed. I ask questions when clarity is missing. I take ownership because that is the only way anything actually gets done. ORÉN is that philosophy wearing clothes. I am not finished. I am becoming. And everything I build reflects that.
             </p>
             <button
               className="btn-ghost"
               style={{ marginTop: '1rem', alignSelf: 'flex-start' }}
               onClick={() => navigate('/our-story')}
             >
-              Read Our Story
+              Read Our Philosophy
             </button>
           </div>
         </div>
@@ -42,7 +42,7 @@ const Founders = () => {
           <div className="founders-philosophy-inner">
             <div className="story-tag">The Belief</div>
             <h2 className="founders-philosophy-title">
-              "You don't need excess<br />to be <em>memorable.</em>"
+              "We do not arrive finished.<br /><em>We are always becoming.</em>"
             </h2>
           </div>
         </div>
